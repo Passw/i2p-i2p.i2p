@@ -297,8 +297,9 @@ public class MetaInfo
         throw new InvalidBEncodingException("Missing name string");
     name = val.getString();
     // We could silently replace the '/', but that messes up the info hash, so just throw instead.
-    if (name.indexOf('/') >= 0)
-        throw new InvalidBEncodingException("Invalid name containing '/' " + name);
+    // now handled in Storage
+    //if (name.indexOf('/') >= 0)
+    //    throw new InvalidBEncodingException("Invalid name containing '/' " + name);
 
     // BEP 27
     val = info.get("private");
