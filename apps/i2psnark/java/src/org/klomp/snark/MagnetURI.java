@@ -59,6 +59,7 @@ public class MagnetURI {
             }
             trackerURLs = getTrackerParam(url);
             name = ihash != null ? ihash : (ihash2 != null ? ihash2 : "");
+            name = name.toUpperCase(Locale.US);
             if (util != null)
                 name = util.getString("Magnet") + ' ' + name;
             else
