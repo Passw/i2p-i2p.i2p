@@ -431,13 +431,25 @@ public class MetaInfo
   }
 
   /**
+   * Efficiently returns the name and the 20 byte SHA1 hash of the info dictionary in a torrent file.
+   * Caller must close stream.
+   * Unused within snark, used by i2psnark-rpc plugin.
+   *
+   * @param infoHashOut 20-byte out parameter
+   * @since 0.8.5
+   */
+  public static String getNameAndInfoHash(InputStream in, byte[] infoHashOut) throws IOException {
+      return getNameAndInfoHash(in, infoHashOut, new AtomicLong());
+  }
+
+  /**
    * Efficiently returns the name and the 20 byte SHA1 hash of the info dictionary in a torrent file,
    * and approximate total length.
    * Caller must close stream.
    *
    * @param infoHashOut 20-byte out parameter
    * @param lengthOut out parameter approximate, not exact
-   * @since 0.8.5
+   * @since 0.9.71
    */
   public static String getNameAndInfoHash(InputStream in, byte[] infoHashOut, AtomicLong lengthOut) throws IOException {
       BDecoder bd = new BDecoder(in);
