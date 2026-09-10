@@ -1,3 +1,20 @@
+2026-09-09 zzz
+ * i2psnark: Request throttle adjustments
+
+2026-09-04 zzz
+ * Addressbook: Check for dest mismatch in action=update
+ * i2psnark:
+   - Catch unbounded bdecode recursion
+   - Improve path traversal checks
+ * i2ptunnel: Fix SOCKS 4/4a downgrade bypass of proxy auth
+ * SAM: Fix DG2/3 subsessions
+
+2026-09-02 zzz
+ * i2psnark: Add js audio playlist controls
+
+2026-09-01 zzz
+ * i2psnark: Check available space when adding torrent files
+
 2026-08-29 zzz
  * i2psnark:
    - Show free disk space on add torrent form
